@@ -1,3 +1,4 @@
+```
 search-engine/
 │
 ├── src/
@@ -16,3 +17,4 @@ search-engine/
 ├── docker-compose.yml
 ├── package.json
 └── tsconfig.json
+```
