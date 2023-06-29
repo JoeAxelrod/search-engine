@@ -1,0 +1,36 @@
+{
+  "name": "search-engine",
+  "version": "1.0.0",
+  "description": "```\r search-engine/\r │\r ├── src/\r │   ├── controllers/\r │   ├── models/\r │   ├── routes/\r │   ├── services/\r │   ├── app.ts\r │   └── server.ts\r │\r ├── tests/\r │\r ├── .dockerignore\r ├── .gitignore\r ├── Dockerfile\r ├── docker-compose.yml\r ├── package.json\r └── tsconfig.json\r ```",
+  "main": "temp.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "nodemon --watch 'src/**/*.ts' --exec ts-node src/server.ts",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.8.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "mongoose": "^7.3.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.2",
+    "@types/mongoose": "^5.11.97",
+    "@types/node": "^20.3.2",
+    "@types/supertest": "^2.0.12",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.0",
+    "typescript": "^5.1.3"
+  }
+}
