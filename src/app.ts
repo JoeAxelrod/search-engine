@@ -1,11 +1,10 @@
 import express from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
-import { Client } from '@elastic/elasticsearch';
-import mongoose from 'mongoose';
-import { Video } from './models/video';
 import videosRoutes from './routes/videos';
-import { esClient } from './config/elasticsearch';
+import { setupElasticsearch } from './video/video.service';
+import { connectToMongo } from './config/mongo';
+import { checkElasticsearchConnection } from './config/elasticsearch';
 
 
 // Create an Express application
@@ -19,32 +18,15 @@ app.use(cors());
 // Import routes
 app.use('/api/videos', videosRoutes);
 
-mongoose.connect('mongodb://localhost:27017/searchEngine');
+(async () => {
+    // Connect to MongoDB
+    await connectToMongo();
 
-// maybe we should move this to src\config\elasticsearch.ts?
-export async function setupElasticsearch() {
-  
-  const indexName = 'videos';
-  const indexExists = await esClient.indices.exists({ index: indexName });
-  if (!indexExists) {
-    try {
-      await esClient.indices.create({ index: indexName });
-      console.log(`Created index ${indexName}`);
-    } catch (err) {
-      console.error(`An error occurred while creating the index ${indexName}:`);
-      console.error(err);
-    }
-  }
+    // Set up Elasticsearch
+    await setupElasticsearch();
 
-  // Index the data in Elasticsearch
-  Video.find().then(async videos => {
-    for (const video of videos) {
-      await esClient.index({
-        index: 'videos',
-        body: video
-      });
-    }
-  }).catch(err => console.error(err));
-}
+    // Check Elasticsearch connection
+    await checkElasticsearchConnection();
+})().catch(console.error);
 
 export default app;
