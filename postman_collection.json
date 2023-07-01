@@ -25,6 +25,94 @@
         }
       },
       "response": []
+    },
+    {
+      "name": "Get Video by exact authorId",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/videos?authorId=user1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "videos"],
+          "query": [
+            {
+              "key": "authorId",
+              "value": "user1"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Video by partial filename",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/videos?filename=test",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "videos"],
+          "query": [
+            {
+              "key": "filename",
+              "value": "test"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Video by duration range",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/videos?min_duration=100&max_duration=200",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "videos"],
+          "query": [
+            {
+              "key": "min_duration",
+              "value": "100"
+            },
+            {
+              "key": "max_duration",
+              "value": "200"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Video by tags",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/videos?tags=product,product3",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "videos"],
+          "query": [
+            {
+              "key": "tags",
+              "value": "product,product3"
+            }
+          ]
+        }
+      },
+      "response": []
     }
   ]
 }

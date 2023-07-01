@@ -1,7 +1,7 @@
 {
   "name": "search-engine",
   "version": "1.0.0",
-  "description": "```\r search-engine/\r │\r ├── src/\r │   ├── controllers/\r │   ├── models/\r │   ├── routes/\r │   ├── services/\r │   ├── app.ts\r │   └── server.ts\r │\r ├── tests/\r │\r ├── .dockerignore\r ├── .gitignore\r ├── Dockerfile\r ├── docker-compose.yml\r ├── package.json\r └── tsconfig.json\r ```",
+  "description": "video search-engine Node.js TS elasticsearch mongoose docker application",
   "main": "temp.js",
   "directories": {
     "test": "tests"

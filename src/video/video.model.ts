@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import mongoose, { Schema, Document } from 'mongoose';
 
-export interface IVideo {
+export interface IVideo extends Document {
   filename: string;
   authorId: string;
   duration: number;

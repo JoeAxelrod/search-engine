@@ -18,7 +18,8 @@ This project provides an API for a search engine backed by MongoDB and Elasticse
     │   ├── app.ts          # Express app
     │   └── server.ts       # Server entry point
     │
-    ├── tests/              # Test files
+    ├── tests/   
+    |   └── videos.test.ts  # Test files
     │
     ├── .dockerignore       # Specifies files to ignore in Docker build
     ├── .gitignore          # Specifies files to ignore in Git
@@ -36,10 +37,6 @@ You can run the application either using npm or using Docker Compose. Here's how
 First, install the dependencies:
 
     npm install
-
-Then, start the application:
-
-    npm start
 
 ### Using Docker Compose
 
@@ -65,13 +62,29 @@ To set up your environment variables, you need to rename the `.env.example` file
 
     mv .env.example .env
 
+Then, start the application:
 
-### test
-The `tests/videos.test.ts` file contains the test suite for the search engine API, specifically testing its Elasticsearch functions.
+    npm start
 
-This suite starts by importing necessary dependencies and defining some test data. It then uses Jest's `describe` and `it` functions to structure the tests and the `expect` function to make assertions about the test results. 
+### Testing
 
-To run these tests, use the command `npm test` from your project's root directory.
+This project's functionality is validated with a suite of tests, focusing on Elasticsearch operations. These tests can be found in `tests/videos.test.ts`.
+
+To run these tests, execute the following command in your terminal:
+
+	npm test
+
+The tests are mainly divided into two parts:
+
+1. **Elasticsearch basic functionality**: Validates Elasticsearch's operations including data indexing and retrieval.
+
+2. **GET /api/videos**: Checks the basic functionality of the GET endpoint, its response to requests with/without specific query parameters, and error handling.
+
+For detailed information on each individual test, please refer to `tests/videos.test.ts`.
+
+![Testing Screenshot](repo-images/tests-screenshot.png)
+
+
 
 ### search parameters
 The `src/routes/videos.ts` script sets up a GET route for '/api/videos'. This route fetches videos from the database, applying various filters according to the request's query parameters. 
@@ -91,17 +104,18 @@ In the given docker-compose configuration, two volumes are defined:
 
 These lines indicate that the data stored in your local `./data/db` and `./data` directories can be accessed within the Docker containers at `/data/db` and `/import_data`, respectively. This setup ensures data consistency between your local environment and the Dockerized services.
 
-The Postman collection provided in the project can be used to understand and test the API endpoints.
-Follow these steps to import the Postman collection:
 
-1. Open Postman.
-2. Click the `Import` button on the top left of the application.
-3. In the opened dialog, click `Upload Files`.
-4. Select the `postman_collection.json` file that is provided in the project repository.
-5. After successful import, the collection will appear on the left side panel of Postman.
-6. You can now select any request from the collection and hit the `Send` button to execute it.
+## API Testing with Postman
 
-Note: Replace `localhost:5000` with your server's actual address if it's different. Also, if your API has
-authorization, you will need to include the correct authorization headers or tokens as necessary.
+A Postman collection is provided in the project for understanding and testing the API endpoints. Follow the steps below to import it:
+
+1. Launch Postman.
+2. Click on `Import` at the top left of the application.
+3. Select `Upload Files` in the dialog that opens.
+4. Choose the `postman_collection.json` file from the project repository.
+5. Once imported successfully, the collection will appear in Postman's left-side panel.
+6. Choose any request from the collection and click `Send` to execute it.
+
+![postman-import.png](repo-images%2Fpostman-import.png)
 
 
