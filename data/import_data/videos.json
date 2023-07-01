@@ -1,0 +1,74 @@
+[
+	{
+		"filename": "Product_demo.mp4",
+		"authorId": "user1",
+		"duration": 180,
+		"tags": ["product"]
+	},
+	{
+		"filename": "Extended product demo",
+		"authorId": "user1",
+		"duration": 1790,
+		"tags": ["product"]
+	},
+	{
+		"filename": "Webinar 1.mp4",
+		"authorId": "user2",
+		"duration": 3600,
+		"tags": ["webinar", "marketing"]
+	},
+	{
+		"filename": "Testimonials",
+		"authorId": "user3",
+		"duration": 300,
+		"tags": ["testimonials"]
+	},
+	{
+		"filename": "Product demo",
+		"authorId": "user4",
+		"duration": 351,
+		"tags": ["product"]
+	},
+	{
+		"filename": "Extended-product-demo.mp4",
+		"authorId": "user5",
+		"duration": 2001,
+		"tags": ["product"]
+	},
+	{
+		"filename": "Webinar",
+		"authorId": "user6",
+		"duration": 3815,
+		"tags": ["webinar", "marketing"]
+	},
+	{
+		"filename": "Testimonials",
+		"authorId": "user7",
+		"duration": 290,
+		"tags": ["testimonials"]
+	},
+	{
+		"filename": "Product demo",
+		"authorId": "user8",
+		"duration": 267,
+		"tags": ["product"]
+	},
+	{
+		"filename": "Extended product demo.mp4",
+		"authorId": "user9",
+		"duration": 1978,
+		"tags": ["product"]
+	},
+	{
+		"filename": "webinar-zoom.mp4",
+		"authorId": "user10",
+		"duration": 2945,
+		"tags": ["webinar", "marketing"]
+	},
+	{
+		"filename": "Testimonials",
+		"authorId": "user11",
+		"duration": 312,
+		"tags": ["testimonials"]
+	}
+]

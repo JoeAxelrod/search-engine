@@ -46,13 +46,7 @@ export async function setupElasticsearch(): Promise<void> {
         try {
 
             await esClient.indices.create({
-                index: indexName,
-               /* mappings: {
-                    properties: {
-                        duration: { type: 'integer' },
-                        // Add other fields if necessary...
-                    }
-                }*/
+                index: indexName
             });
             console.log(`Created index ${indexName}`);
         } catch (err) {
@@ -97,7 +91,7 @@ export async function searchVideos(query: SearchQuery): Promise<ElasticSearchRes
     }
 
     // Add 'authorId' filter to the search query if provided.
-    if (query.authorId) {  // add short comment
+    if (query.authorId) {
         body.query.bool.must.push({
             term: { // Term is an exact query
                 authorId: query.authorId

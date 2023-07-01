@@ -1,6 +1,7 @@
 import express from 'express';
 import { searchVideos } from '../video/video.service';
 
+
 const router = express.Router();
 
 // Set up a GET route for '/api/videos' to fetch videos with various filters.
@@ -36,7 +37,7 @@ router.get('/', async (req, res) => {
         res.status(500).json({ error: 'Error executing search' });
         return Promise.reject(error);  // Add this line
       });
-
+    
     if (!response?.hits?.hits || response.hits.hits.length === 0) {
         // console.warn('No hits found', response);
         res.status(404).json({ error: 'No hits found' });
